@@ -1,0 +1,8 @@
+.vscode*
+.vs*
+obj*
+bin*
+.sonarqube*
+.config*
+.vs*
+.idea*
