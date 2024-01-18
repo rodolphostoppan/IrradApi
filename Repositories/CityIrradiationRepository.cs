@@ -24,7 +24,7 @@ public class CityIrradiationRepository : ICityIrradiationRepository
         var result = stateIrradiation.Adapt<CityIrradiationResponse>();
         result.SetStatusCode(201);
 
-        return result;
+        return (IActionResult)result;
     }
 
     public async Task<IActionResult> GetByName(string name)
@@ -33,7 +33,9 @@ public class CityIrradiationRepository : ICityIrradiationRepository
 
         if (cityIrradiation is null) return cityIrradiation.Adapt<NotFoundResult>();
 
-        return cityIrradiation.Adapt<CityIrradiationResponse>();
+        var responseData = cityIrradiation.CityIrradiationData;
+
+        return new ObjectResult(responseData);
     }
 }
 

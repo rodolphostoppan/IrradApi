@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace IrradApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("/irradiation")]
 public class CityIrradiationController : ControllerBase
 {
     private readonly CityIrradiationService _cityIrradiationService;
